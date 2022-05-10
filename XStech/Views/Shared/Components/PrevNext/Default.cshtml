@@ -1,0 +1,18 @@
+﻿@model (Post Prev, Post Next)
+
+<section class="prev-next">
+    <a href="/posts/@Model.Prev.Id">
+        <div>
+            <h3>@Model.Prev.Title</h3>
+            <p>PREV POST</p>
+        </div>
+        <img src="@Model.Prev.ImageURL" alt="Thumbnail" asp-append-version="true" />
+    </a>
+    <a href="/posts/@Model.Next.Id">
+        <img src="@Model.Next.ImageURL" alt="Thumbnail" asp-append-version="true"/>
+        <div>
+            <h3>@Model.Next.Title</h3>
+            <p>NEXT POST</p>
+        </div>
+    </a>
+</section>

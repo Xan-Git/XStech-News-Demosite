@@ -1,0 +1,19 @@
+﻿@model Author
+
+<section class="about-author">
+    <div>
+        <h2>About the Author</h2>
+        <img src="@Model.ProfilePicture" alt="Author Photo" asp-append-version="true" />
+        <div class="author-meta">
+            <h1>@Model.FirstName @Model.LastName</h1>
+            <p>@Model.Bio</p>
+            <span>
+                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com>"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.bing.com"><i class="fa-solid fa-link"></i></a>
+            </span>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "_MainLayout";
+}
+
+<section class="info-page">
+    <header>
+        <span><i class="fa-solid fa-envelope"></i></span>
+        <h1>Contact Us</h1>
+    </header>
+    <main class="contact">
+        <section class="contact-text">
+            <div>
+                <h3>Anytime</h3>
+                <p>
+                    Our creators are always ready to hear your input on what you'd like 
+                    XStech to cover, and how you'd like us cover it. We promise to read 
+                    every email sent to our inbox, and reply as quickly as we can.
+                </p>
+            </div>
+            <div>
+                <h3>Anywhere</h3>
+                <p>
+                    XStech is a team of globetrotters, always on the hunt for the gems others 
+                    may have missed. If you have a local tech event you think is worthy of 
+                    coverage, no matter where, shoot us a message. You never know where 
+                    it might lead.
+                </p>
+            </div>
+            <div>
+                <h3>Anyone</h3>
+                <p>
+                    Don't feel required to have a media connection to get in touch. Our 
+                    multilingual team desires to connect to everyone, from top CEO's, to the 
+                    casual technology consumer. Everyday readers' messages of support are 
+                    some of our most meaningful.
+                </p>
+            </div>
+        </section>
+        <section class="contact-form">
+            <form action="/sendcontact" method="post">
+                <label for="c-name">Your Name</label>
+                <input id="c-name" name="Name" type="text" placeholder="Ruby Davis" />
+                
+                <label for="c-email">Email Address</label>
+                <input id="c-email" name="Email" type="email" placeholder="someone@example.com" />
+
+                <label for="c-subject">Subject</label>
+                <input id="c-subject" name="Subject" type="text" placeholder="Feedback, Employment, etc." />
+
+                <label for="c-msg">Your Message</label>
+                <textarea id="c-msg" name="Message" rows="6" ></textarea>
+
+                <button>Send <i class="fa-solid fa-envelope-open"></i></button>
+            </form>
+        </section>
+
+    </main>
+</section>

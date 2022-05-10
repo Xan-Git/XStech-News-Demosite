@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "_MainLayout";
+}
+
+<div class="cat-container">
+    <header class="cat-header">
+        <span class="cat-title">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>Tips</h2>
+        </span>
+        <p class="cat-subtitle">How-to's and helpful hacks</p>
+    </header>
+</div>
+
+
+<div class="main-content">
+    <main class="category">
+        @await Component.InvokeAsync("NewsCategory", "Tips")
+
+    </main>
+
+
+
+
+    @await Component.InvokeAsync("Sidebar")
+</div>

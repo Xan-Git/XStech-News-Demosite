@@ -1,0 +1,72 @@
+﻿@model (List<Post> Trending, List<Post> Vids, List<Post> Reviews)
+
+<section class="sidebar">
+    <img src="~/images/Advert_Films.jpg" alt="Advertisement" asp-append-version="true" />
+
+    <h3>Trending Videos:</h3>
+    <div class="sidebar-videos">
+        @foreach(Post post in @Model.Vids)
+        {
+            <a href="/posts/@post.Id">
+                <div>
+                    <img src="@post.ImageURL" alt="Thumbnail" asp-append-version="true" />
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <h4>@post.Title</h4>
+            </a>
+        }
+    </div>
+
+    <h3>Popular Posts:</h3>
+    <div class="sidebar-trending">
+        @foreach(Post post in @Model.Trending)
+        {
+            <a href="/posts/@post.Id" class="sidebar-trending-item">
+                <img src="@post.ImageURL" alt="Thumbnail" asp-append-version="true" />
+                <div class="trending-text">
+                    <p>@post.Title</p>
+                    <span>@post.UploadDate.ToShortDateString()</span>
+                </div>
+            </a>
+        }
+    </div>
+
+    <h3>Recent Reviews:</h3>
+    <div class="sidebar-reviews">
+        @foreach (Post post in @Model.Reviews)
+        {
+            <a href="/posts/@post.Id" class="sidebar-review-item">
+                <img src="@post.ImageURL" alt="Thumbnail" asp-append-version="true" />
+                <div class="reviews-text">
+                    <p>@post.Title</p>
+                    <span class="ratings">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </span>
+                </div>
+            </a>
+        }
+    </div>
+
+    <h3>Follow Us:</h3>
+    <div class="sidebar-socials">
+        <a href="https://www.facebook.com" class="fb-btn">
+            <i class="fab fa-facebook"></i> <br />
+            <i>1.6m</i>
+        </a>
+        <a href="https://www.twitter.com" class="tw-btn">
+            <i class="fab fa-twitter"></i> <br />
+            <i>2.8m</i>
+        </a>
+        <a href="https://www.youtube.com" class="yt-btn">
+            <i class="fab fa-youtube"></i> <br />
+            <i>970k</i>
+        </a>
+    </div>
+
+    <img id="sidebar-end-ad" src="~/images/Advert_UncleSam.jpg" alt="Advertisement" asp-append-version="true" />
+
+</section>

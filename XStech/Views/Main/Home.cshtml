@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_MainLayout";
+}
+
+    @await Component.InvokeAsync("FeaturedNews")
+
+<div class="main-content">
+    @await Component.InvokeAsync("RecentNews")
+    @await Component.InvokeAsync("Sidebar")
+</div>

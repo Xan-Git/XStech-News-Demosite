@@ -1,0 +1,19 @@
+﻿@using Humanizer
+@model (List<Post> Posts, List<string> Teasers)
+
+@foreach(Post post in Model.Posts)
+{
+    <article class="cat-card">
+        <a href="/posts/@post.Id"><img src="@Url.Content(post.ImageURL)" alt="Thumbnail" /></a>
+        <span class="cat-category post-ornament">@post.Category</span>
+        <h2><a href="/posts/@post.Id">@post.Title</a></h2>
+        <p>@Model.Teasers[Model.Posts.IndexOf(post)]</p>
+        <div class="cat-meta">
+            <span>@post.UploadDate.ToLongDateString()</span>
+            <span class="cat-slash">/</span>
+            <span>By @post.Author.FirstName @post.Author.LastName</span>
+            <span class="cat-slash">/</span>
+            <span><i class="fa-solid fa-eye"></i> @post.Views.ToMetric(decimals: 1)</span>
+        </div>
+    </article>
+}

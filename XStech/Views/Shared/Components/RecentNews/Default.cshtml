@@ -1,0 +1,31 @@
+﻿@using Humanizer
+@model (List<Post> Posts, List<string> Teasers)
+
+
+<section class="recent-news">
+<h1>Recent News:</h1>
+@foreach (Post post in Model.Posts)
+{
+    <article class="recent-news-card">
+        <div class="recent-img">
+            <a href="/posts/@post.Id"><img src="@post.ImageURL" alt="Thumbnail Image" asp-append-version="true"></a>
+        </div>
+        <div class="recent-text">
+            <a href="" class="post-ornament">@post.Category</a>
+            <h2><a href="/posts/@post.Id">@post.Title</a></h2>
+            <p>@Model.Teasers.ElementAt(Model.Posts.IndexOf(post))</p>
+            <div>
+                <span class="post-detail">@post.UploadDate.ToLongDateString().ToUpper() <i id="recent-slash">/</i></span>
+                <br />
+                <span class="post-detail">BY @post.Author.FirstName.ToUpper() @post.Author.LastName.ToUpper()</span>
+            </div>
+        </div>
+    </article>
+    @if (post.Id == Model.Posts[2].Id)
+    {
+        <div id="adobe-ad-container">
+            <img class="adobe-ad" src="~/images/Advert_Adobe.png" alt="Advertisement" asp-append-version="true"/>
+        </div>
+    }
+}
+</section>

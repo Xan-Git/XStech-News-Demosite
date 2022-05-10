@@ -1,0 +1,21 @@
+﻿@using Humanizer
+@model List<Post>
+
+<h1 id="featured-heading">Featured Stories:</h1>
+<section class="featured-news">
+    @foreach (Post post in Model)
+    {
+        <div class="featured-@(Model.IndexOf(post) + 1)">
+            <a href="/posts/@post.Id">
+                <img src="@post.ImageURL" alt="Thumbnail Image" asp-append-version="true" />
+                <div class="featured-text">
+                    <span class="post-ornament">@post.Category</span>
+                    <p>@post.Title</p>
+                    <span class="post-detail">@post.UploadDate.ToLongDateString().ToUpper() &nbsp; &nbsp; / &nbsp; &nbsp; </span>
+                    <span class="post-detail">BY @post.Author.FirstName.ToUpper() @post.Author.LastName.ToUpper()</span>
+                </div>
+            </a>
+        </div>
+    }
+</section>
+

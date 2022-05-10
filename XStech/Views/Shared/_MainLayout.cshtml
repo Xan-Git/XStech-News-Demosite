@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XStech - Tech News & Reviews</title>
+
+
+
+    <script src="https://kit.fontawesome.com/897d6932f5.js" crossorigin="anonymous"></script>
+    <link href="~/css/style.css" rel="stylesheet"/>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" >
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    @await Component.InvokeAsync("Nav")
+
+    @RenderBody()
+
+
+
+    <footer>
+        <div class="ft-container">
+            <div class="left-footer">
+                <img src="~/images/site-logo.png" alt="Website Logo" />
+                <p>
+                    XStech is a sample technology blog I built for practice & to show off my skills. 
+                    We love covering technology - from industry happenings to device tips. 
+                    All of the people, posts, and content on this site are fake and for 
+                    demonstration purposes only.
+                </p>
+                <span class="socials">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                </span>
+            </div>
+            <div class="right-footer">
+                <h3>Business</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/advertising">Advertising</a></li>
+                    <li><a href="/legal">Legal</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+        <small>&copy; Xan Seagren 2022</small>
+    </footer>
+
+    <script src="~/js/main.js"></script>
+</body>
+</html>

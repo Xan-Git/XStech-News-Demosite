@@ -1,0 +1,55 @@
+﻿@model List<List<Post>>
+
+   <nav class="navbar">
+        <div class="nav-logo">
+            <img src="~/images/site-logo.png" alt="Site Logo" />
+        </div>
+        <div class="nav-container">
+            <div class="nav-left">
+                <ul class="main-nav">
+                    <li><a href="/" class="nav-link">Home</a> <hr /></li>
+                    <li><a href="#" class="dropdown-toggle nav-link">News</a> <hr />
+                        <section class="dropdown" data-fade="in">
+                            <ul class="dropdown-list">
+                                <li class="dropdown-item" data-active="active"><a class="dropdown-link" data-active="active">@Model[0].First().Category</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link">@Model[1].First().Category</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link">@Model[2].First().Category</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link">@Model[3].First().Category</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link">@Model[4].First().Category</a></li>
+                            </ul>
+                            <article>
+                                @foreach (List<Post> category in Model)
+                                {
+                                    <ul class="news-list news-inactive">
+                                        @foreach (Post post in category)
+                                        {
+                                            <li class="news-card">
+                                                <div class="news-img">
+                                                    <a href="/posts/@post.Id"><img src=@post.ImageURL asp-append-version="true"></a>
+                                                </div>
+                                            <p class="news-text">
+                                                    <a href="/posts/@post.Id">@post.Title</a>
+                                                </p>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </article>
+                        </section>
+                    </li>
+                    <li><a href="/tips" class="nav-link">Tips</a> <hr /> </li>
+                    <li><a href="/videos" class="nav-link">Videos</a> <hr /> </li>
+                    <li><a href="/reviews" class="nav-link">Reviews</a> <hr /> </li>
+                    <li><a href="/contact" class="nav-link">Contact Us</a> <hr /> </li>
+                </ul>
+            </div>
+        
+            <div class="nav-right">
+                <a href="#"><i class="fab fa-android"></i></a>
+                <a href="#"><i class="fab fa-apple"></i></a>
+            </div>
+        </div>
+        <i class="fas fa-chevron-circle-down nav-toggler" data-expanded=></i>
+    </nav>
+
+<div class="nav-spacer"></div>

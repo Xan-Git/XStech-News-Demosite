@@ -1,0 +1,27 @@
+﻿@using Humanizer
+@model (List<Post> Posts, List<string> Teasers)
+
+@foreach(Post post in Model.Posts)
+{
+    <article class="vid-card">
+        <a href="/posts/@post.Id">
+            <img src="@Url.Content(post.ImageURL)" alt="Thumbnail" />
+            <i class="fa-solid fa-play"></i>
+        </a>
+        <div class="vid-text">
+            <div class="post-social">
+                <a href="#"><span class="fb-btn"><i class="fa-brands fa-facebook-f"></i>&nbsp; Share on Facebook</span></a>
+                <a href="#"><span class="tw-btn"><i class="fa-brands fa-twitter"></i>&nbsp; Share on Twitter</span></a>
+            </div>
+            <h2><a href="/posts/@post.Id">@post.Title</a></h2>
+            <p>@Model.Teasers[Model.Posts.IndexOf(post)]</p>
+            <div class="vid-meta">
+                <span>@post.UploadDate.ToShortDateString()</span>
+                <span class="cat-slash">/</span>
+                <span>@post.Author.FirstName @post.Author.LastName</span>
+                <span class="cat-slash">/</span>
+                <span>@post.Views.ToMetric(decimals: 1) <i class="fa-solid fa-eye"></i></span>
+            </div>
+        </div>
+    </article>
+}
