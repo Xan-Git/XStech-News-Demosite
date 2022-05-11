@@ -1678,3 +1678,20 @@ footer small {
     margin-left: 0.5rem;
 }
 
+@media (max-width: 700px) {
+    .contact {
+        display: block;
+    }
+
+    .contact-text,
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact button {
+        width: 40%;
+        margin-left: auto;
+    }
+
+}
+
