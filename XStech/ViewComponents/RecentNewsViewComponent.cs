@@ -36,7 +36,7 @@ namespace XStech.ViewComponents
             List<string> teasers = new();
 
             foreach (Post post in posts)
-                teasers.Add(File.ReadLines(post.PartialURL).ElementAt(1));
+                teasers.Add("In lobortis pharetra mattis. Morbi nec nibh iaculis, bibendum augue a, ultrices nulla. Nunc velit ante, lacinia id tincidunt eget, faucibus nec nisl. In mauris purus, bibendum et gravida dignissim, venenatis.");
 
             return teasers;
 
